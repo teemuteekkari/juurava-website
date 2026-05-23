@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-deep text-mist font-sans antialiased;
+    background: #0B0E2E;
+  }
+  ::selection { background: #FF3DA8; color: #06081F; }
+}
+
+@layer components {
+  .display {
+    font-family: 'Space Grotesk', 'Inter Tight', sans-serif;
+    font-weight: 700;
+  }
+  .display-fraunces {
+    font-family: 'Fraunces', Georgia, serif;
+    font-variation-settings: 'opsz' 144, 'SOFT' 50;
+  }
+
+  /* Animated gradient text */
+  .grad-text {
+    background: linear-gradient(135deg, #FF3DA8, #7B5CFF, #3DE3FF, #FF3DA8);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient 6s ease infinite;
+  }
+
+  /* Tech grid background */
+  .tech-grid {
+    background-image:
+      linear-gradient(to right, rgba(123, 92, 255, 0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(123, 92, 255, 0.07) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  /* Glow blobs */
+  .glow-magenta {
+    background: radial-gradient(circle, rgba(255,61,168,0.22) 0%, transparent 65%);
+  }
+  .glow-cyan {
+    background: radial-gradient(circle, rgba(61,227,255,0.18) 0%, transparent 65%);
+  }
+  .glow-violet {
+    background: radial-gradient(circle, rgba(123,92,255,0.20) 0%, transparent 65%);
+  }
+
+  /* Glassmorphism card */
+  .glass {
+    background: rgba(26, 31, 85, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(123, 92, 255, 0.25);
+  }
+
+  /* Neon border glow */
+  .neon-magenta {
+    box-shadow: 0 0 20px rgba(255,61,168,0.35), inset 0 0 20px rgba(255,61,168,0.05);
+  }
+  .neon-cyan {
+    box-shadow: 0 0 20px rgba(61,227,255,0.30), inset 0 0 20px rgba(61,227,255,0.05);
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
